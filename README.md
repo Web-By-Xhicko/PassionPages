@@ -1,14 +1,13 @@
 # Passion Pages - Blogging Adventure
 
-## Team Members
+**Project Overview:**
+The ALX SE Project for the third trimester is a pivotal stage before entering the specialized phase. It focuses on honing software engineering skills through practical application, integrating various technologies, and problem-solving. The project aims to fortify foundational knowledge, fostering an environment for comprehensive learning and skill refinement in preparation for the specialized phase.
+
+## Developer 
 
 ### 1. Isaac Otagada
    - **Role:** Fullstack (Frontend and Backend)
    - **Reason for Role:** Responsible for both frontend and backend development, ensuring a cohesive and user-friendly experience.
-
-### 2. Robson Aliye
-   - **Role:** Frontend
-   - **Reason for Role:** Focuses on frontend development, ensuring an aesthetically pleasing and user-friendly platform.
 
 ## Technologies Used
 
