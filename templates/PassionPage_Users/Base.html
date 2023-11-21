@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body> 
-    <h1>Welcome to Passion Page</h1>
-</body>
-</html>
+{% include  'PassionPage_Users/Navigation.html' %}
+    {% load static %}
+    {% block content %}
+
+    <div class="Content_Wrapper">
+       <div class="Content">
+         <h1>Welcome to Passion Page</h1>
+       </div>
+    </div>
+
+           
+    {% endblock %}

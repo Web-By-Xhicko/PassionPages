@@ -5,5 +5,5 @@ from .views import BaseView
 app_name = 'PassionPage_Users'
 
 urlpatterns = [
-    path('', BaseView.as_view(), name='Base'),
+    path('', BaseView.as_view(), name='Base_Page'),
 ]
