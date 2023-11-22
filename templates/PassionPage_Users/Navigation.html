@@ -4,113 +4,89 @@
 <html class="no-js" lang="en">
 <head>
 
-    <!--- basic page needs
-    ================================================== -->
     <meta charset="utf-8">
     <title>PassionPages</title>
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!-- mobile specific metas
-    ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="{% static 'PassionPage_Users/css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'PassionPage_Users/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'PassionPage_Users/css/Base.css' %}">
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
-
-    <!-- script
-    ================================================== -->
    
 </head>
 
 <body>
 
 {% block content %}
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
 
-    <div id="top" class="s-wrap site-wrapper">
+        <nav>
+            <img src="{% static 'PassionPage_Users/images/Logo_1.png' %}" alt="Logo">
 
-        <!-- site header
-        ================================================== -->
-        <header class="s-header">
+            <ul class="List_Wrap Wrap">
 
-            <div class="header__top">
-                <div class="header__logo">
-                    <a class="site-logo" href="index.html">
-                        <img src="{% static 'PassionPage_Users/images/Logo_1.png' %}" alt="Logo">
-                    </a>
-                </div>
+                <li>
+                    <a href="#">Home</a>
+                </li>
 
-  
-                <!-- toggles -->
-                <a href="#0" class="header__menu-toggle"><span>Menu</span></a>
+                <li>
+                    <a href="#">Favorite</a>
+                </li>
 
-            </div> <!-- end header__top -->
-
-            <nav class="header__nav-wrap">
-
-                <ul class="header__nav">
-                    <li class="current"><a href="index.html" title="">Home</a></li>
-
-                    <li class="has-children">
-                        <a href="#0" title="">Categories</a>
-                        <ul class="sub-menu">
+                <li class="Nav_Parent">
+                    <a href="#">Category</a>
+                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg>
+                    <ul class="Nav_Child">
                         <li><a href="#">Politics</a></li>
-                        </ul>
-                    </li>
+                        <li><a href="#">Politics</a></li>
+                    </ul>
+                </li>
 
-                    
-                    <li><a href="#" title="">Favorites</a></li>
+                <li>
+                    <a href="#">Terms</a>
+                </li>
 
-                    <li class="has-children">
-                        <a href="#0" title="">Settings</a>
-                        <ul class="sub-menu">
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+
+                <li>
+                    <a href="#">About</a>
+                </li>
+
+                <li class="Nav_Parent">
+                    <a href="#">Settings</a>
+                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                      </svg>
+                    <ul class="Nav_Child">
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Edit Profile</a></li>
                         <li><a href="#">Change Password</a></li>
                         <li><a href="#">Delete Account</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="has-children">
-                        <a href="#0" title="">Authentication</a>
-                        <ul class="sub-menu">
-                        <li><a href="#">Sign In</a></li>
-                        <li><a href="#">Sign Up</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="#" title="">Log out</a></li>
-                </ul> <!-- end header__nav -->
-
-               
-
-            </nav> <!-- end header__nav-wrap -->
-
+                    </ul>
+                </li>
             
 
-        </header> <!-- end s-header -->
+            </ul>
 
+            <ul class="Auth_Wrap Wrap "> 
+                        <li><a href="#">Sign Up</a></li>
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">Log out</a></li>
+                </li>
 
-    </div> <!-- end s-wrap -->
+            </ul>
+  
+        </nav>
 
 
     <!-- Java Script
     ================================================== -->
-    <script src="{% static '/PassionPage_Users/js/jquery-3.2.1.min.js' %}"></script>
-    <script src="{% static '/PassionPage_Users/js/plugins.js' %}"></script>
-    <script src="{% static '/PassionPage_Users/js/main.js' %}"></script>
+    <script src="{% static '/PassionPage_Users/js/Base.js' %}"></script>
 
 {% endblock %}
 </body>
