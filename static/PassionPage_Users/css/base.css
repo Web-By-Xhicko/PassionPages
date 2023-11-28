@@ -15,17 +15,36 @@ font-family: 'Josefin Slab', serif;
 nav{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 10px 15px ;
-  background-color: #000;
+  background-color: #000000f3;
   width: 300px;
   height: 100vh;
   position: relative;
+  overflow: scroll;
+}
+
+nav::-webkit-scrollbar {
+  display: none;
+}
+
+.Logo{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #000;
+  margin: 0;
+  padding: 20px 50px;
 }
 
 nav img{
-  width: 70%;
+  width: 200px;
   object-fit: contain;
-  margin: 20px 0 0 0;
+}
+
+.List_Wrap{
+  margin: 100px 0 30px 0;
 }
 
 .Wrap {
@@ -43,54 +62,70 @@ nav img{
   color: #fff;
   text-decoration: none;
   font-family: 'Heebo', sans-serif;
-  font-size: 1rem;
+  font-size: .9rem;
   transition: all .2s ease-in-out;
+  text-transform: uppercase;
 }
 
-.Wrap a:hover{
-  font-weight: 500;
-}
 
-.Nav_Parent{
+.Nav_Parent,
+.Nav_Parent2{
   position: relative;
   cursor: pointer;
 }
 
-.Nav_Parent svg{
+.Nav_Parent svg,
+.Nav_Parent2 svg{
  position: absolute;
  top: 5px;
  right: 10px;
  color: #fff;
  width: 15px;
+ transform: rotate(0deg); 
+ transition: transform 0.3s ease-in-out;
 }
 
-.List_Wrap{
-  margin: 30px 0 10px 0;
+.Nav_Parent svg.rotate-clockwise,
+.Nav_Parent2 svg.rotate-clockwise{
+  transform: rotate(180deg); 
 }
 
-
-.Auth_Wrap{
-  position: absolute;
-  bottom: 50px;
-  left: 10px;
-  width: 100%;
+.Nav_Parent svg.rotate-anticlockwise,
+.Nav_Parent2 svg.rotate-anticlockwise{
+  transform: rotate(0); 
 }
 
-.Nav_Child{
+.Nav_Child,
+.Nav_Child2{
   display: flex;
   flex-direction: column;
   margin: 0 0 0 2rem;
-  height: 0;
+  max-height: 0;
   overflow: hidden;
-  visibility: hidden;
+  transition: all .5s ease-in-out;
+}
+
+.Nav_Child li a,
+.Nav_Child2 li a{
+  font-size: .8rem;
+}
+
+.Nav_Child li a:hover,
+.Nav_Child2 li a:hover{
+  text-decoration: underline;
 }
 
 .Nav_Child.Activate{
-  height: 100px;
-  visibility: visible;
-}
+   max-height: 100px;
+   padding: 10px 0;
+ }
 
-.Nav_Child li{
-  padding:0;
-}
+.Nav_Child2.Activate{
+   max-height: 250px;
+   padding: 10px 0;
+ }
 
+
+.Auth_Wrap{
+  left: 10px;
+}

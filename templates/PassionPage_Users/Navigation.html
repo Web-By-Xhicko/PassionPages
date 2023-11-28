@@ -22,7 +22,9 @@
 {% block content %}
 
         <nav>
-            <img src="{% static 'PassionPage_Users/images/Logo_1.png' %}" alt="Logo">
+            <div class="Logo">
+                <img src="{% static 'PassionPage_Users/images/Logo_1.png' %}" alt="Logo">
+            </div>
 
             <ul class="List_Wrap Wrap">
 
@@ -39,7 +41,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
                         <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                       </svg>
-                    <ul class="Nav_Child">
+                    <ul class="Nav_Child Child_Links">
                         <li><a href="#">Politics</a></li>
                         <li><a href="#">Politics</a></li>
                     </ul>
@@ -57,12 +59,16 @@
                     <a href="#">About</a>
                 </li>
 
-                <li class="Nav_Parent">
+                <li class="Nav_Parent2">
                     <a href="#">Settings</a>
                     <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
                         <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                       </svg>
-                    <ul class="Nav_Child">
+                    <ul class="Nav_Child2 Child_Links">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Edit Profile</a></li>
+                        <li><a href="#">Change Password</a></li>
+                        <li><a href="#">Delete Account</a></li>
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Edit Profile</a></li>
                         <li><a href="#">Change Password</a></li>
@@ -73,14 +79,12 @@
 
             </ul>
 
-            <ul class="Auth_Wrap Wrap "> 
-                        <li><a href="#">Sign Up</a></li>
-                        <li><a href="#">Sign In</a></li>
-                        <li><a href="#">Log out</a></li>
+            <!-- <ul class="Auth_Wrap Wrap "> 
+                       
                 </li>
 
             </ul>
-  
+   -->
         </nav>
 
 

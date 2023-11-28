@@ -1,21 +1,25 @@
-let navParent = document.querySelectorAll('.Nav_Parent')
-let navChild = document.querySelectorAll('.Nav_Child')
+let navParent = document.querySelector('.Nav_Parent')
+let navParent2 = document.querySelector('.Nav_Parent2')
+let navChild = document.querySelector('.Nav_Child');
+let navChild2 = document.querySelector('.Nav_Child2');
+let child2_svg = document.querySelector('.Nav_Parent2 svg')
+let isRotated = false;
+let isRotated2 = false;
 
 
-
-
-navParent.forEach ( function(nav_listen){
-    nav_listen.addEventListener('click', function(){
-        navChild.classList.toggle('Activate')
+    navParent.addEventListener('click', function(){
+            navChild.classList.toggle('Activate')
+            rotateToggle(navParent);
     })
-});
 
 
-// nav_parent_listener.addEventListener('click', function(){
-//     nav_child_listener.classList.toggle('Activate')
-// })
+    navParent2.addEventListener('click', function(){
+        navChild2.classList.toggle('Activate')
+        rotateToggle(navParent2);
+    })
 
-
-// navParent.addEventListener('click', function(){
-//         navChild.classList.toggle('Activate')
-// })
+function rotateToggle(parentElement) {
+    let child1_svg = parentElement.querySelector('svg')
+     child1_svg.classList.toggle('rotate-clockwise');
+}
+    
