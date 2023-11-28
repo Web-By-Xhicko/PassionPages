@@ -186,12 +186,12 @@ nav{
 .Data_Grid_Info{
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 250px;
   background-color: #000000e5;
 }
 
 .Meta_Data{
-  padding: 5px 10px;
+  padding: 1px 10px;
 }
 
 .Data_Grid_Info a{
@@ -208,7 +208,7 @@ nav{
 
 .Data_Grid_Info img{
   width: 100%;
-  border-radius: 3px;
+  border-radius: 5px 5px 0 0;
 }
 
 .Flex, .S_Flex{
@@ -246,7 +246,7 @@ nav{
  font-family: 'Heebo', sans-serif;
 }
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:1100px){
 
   nav{
     width:100%;
@@ -268,7 +268,7 @@ nav{
   .Navigation{
     width: 100%;
     height: auto;
-    left: -1000px;
+    left: -1100px;
     top: 0px;
     background-color: #000000f3;
     padding: 10px 15px;
