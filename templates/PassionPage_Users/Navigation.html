@@ -21,63 +21,16 @@
 
 {% block content %}
 
+     <div class="Wrapper">
         <nav>
             <div class="Logo">
                 <img src="{% static 'PassionPage_Users/images/Logo_1.png' %}" alt="Logo">
+
+                <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-list Navlist_Listener" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg>
             </div>
 
-            <ul class="List_Wrap Wrap">
-
-                <li>
-                    <a href="#">Home</a>
-                </li>
-
-                <li>
-                    <a href="#">Favorite</a>
-                </li>
-
-                <li class="Nav_Parent">
-                    <a href="#">Category</a>
-                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                      </svg>
-                    <ul class="Nav_Child Child_Links">
-                        <li><a href="#">Politics</a></li>
-                        <li><a href="#">Politics</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="#">Terms</a>
-                </li>
-
-                <li>
-                    <a href="#">Privacy</a>
-                </li>
-
-                <li>
-                    <a href="#">About</a>
-                </li>
-
-                <li class="Nav_Parent2">
-                    <a href="#">Settings</a>
-                    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                      </svg>
-                    <ul class="Nav_Child2 Child_Links">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Edit Profile</a></li>
-                        <li><a href="#">Change Password</a></li>
-                        <li><a href="#">Delete Account</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Edit Profile</a></li>
-                        <li><a href="#">Change Password</a></li>
-                        <li><a href="#">Delete Account</a></li>
-                    </ul>
-                </li>
-            
-
-            </ul>
 
             <!-- <ul class="Auth_Wrap Wrap "> 
                        
@@ -85,8 +38,114 @@
 
             </ul>
    -->
+
         </nav>
 
+        <div class="Navigation Reveal_NavList">
+                <ul class="List_Wrap Wrap Mobile">
+
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+    
+                    <li>
+                        <a href="#">Bookmark</a>
+                    </li>
+    
+                    <li class="Nav_Parent">
+                        <a href="#">Category</a>
+                        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                          </svg>
+                        <ul class="Nav_Child Child_Links">
+                            <li><a href="#">Politics</a></li>
+                            <li><a href="#">Politics</a></li>
+                        </ul>
+                    </li>
+    
+                    <li>
+                        <a href="#">Terms</a>
+                    </li>
+    
+                    <li>
+                        <a href="#">Privacy</a>
+                    </li>
+    
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+    
+                    <li class="Nav_Parent2">
+                        <a href="#">Settings</a>
+                        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                          </svg>
+                        <ul class="Nav_Child2 Child_Links">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Edit Profile</a></li>
+                            <li><a href="#">Change Password</a></li>
+                            <li><a href="#">Delete Account</a></li>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Edit Profile</a></li>
+                            <li><a href="#">Change Password</a></li>
+                            <li><a href="#">Delete Account</a></li>
+                        </ul>
+                    </li>
+                
+    
+                </ul>
+        </div>
+
+        <div class="User">
+            <div class="User_Auth">
+                <h3>Welcome back, Xhicko</h3>
+                <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                  </svg>
+            </div>
+
+            
+            <div class="Data_Wrapper">  
+                <h3>Latest Posts</h3>
+
+                    <div class="Data_Grid_Wrapper">
+                        <div class="Data_Grid_Info">
+                        <img src="{% static 'PassionPage_Users/images/Grid_Images.jpg' %}" alt="Logo">
+
+                            <div class="Meta_Data">
+                                
+                            <a href="#">Lorem ipsum, dolor sit amet...</a>
+
+                            <div class="Data_Grid_Meta_Info Flex">
+                                <div class="Meta_Info">
+                                    <h3>By Xhicko</h3>
+                                </div>
+                                <div class="Meta_Info">
+                                    <h3>Politics</h3>
+                                </div>
+                            </div>
+
+                            <div class="Data_Grid_Social Flex">
+                                <div class="Socials S_Flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bookmark-check-fill Ua_Bookmark" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5m8.854-9.646a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3"/>
+                                      </svg>
+                                    <h3>80</h3>
+                                </div>
+                                <div class="Socials S_Flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat-left-fill Uc_Comment" viewBox="0 0 16 16">
+                                        <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                      </svg>
+                                    <h3>55</h3>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+     </div>
 
     <!-- Java Script
     ================================================== -->

@@ -12,21 +12,19 @@ font-family: 'Josefin Sans', sans-serif;
 font-family: 'Josefin Slab', serif;
 */
 
+.Wrapper{
+  position: relative;
+}
+
 nav{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 15px ;
-  background-color: #000000f3;
   width: 300px;
-  height: 100vh;
   position: relative;
-  overflow: scroll;
 }
 
-nav::-webkit-scrollbar {
-  display: none;
-}
 
 .Logo{
   position: fixed;
@@ -36,15 +34,40 @@ nav::-webkit-scrollbar {
   background-color: #000;
   margin: 0;
   padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
 }
 
-nav img{
+.Logo img{
   width: 200px;
   object-fit: contain;
+  object-position: center;
+}
+
+.Logo svg{
+  display: none;
+}
+
+.Navigation{
+  position: absolute;
+  width: 300px;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  background-color: #000000f3;
+  padding: 10px 10px;
+  overflow: scroll;
+  z-index: 2;
+}
+
+.Navigation::-webkit-scrollbar {
+  display: none;
 }
 
 .List_Wrap{
-  margin: 100px 0 30px 0;
+  margin: 80px 0 5px 0;
 }
 
 .Wrap {
@@ -66,7 +89,6 @@ nav img{
   transition: all .2s ease-in-out;
   text-transform: uppercase;
 }
-
 
 .Nav_Parent,
 .Nav_Parent2{
@@ -125,7 +147,156 @@ nav img{
    padding: 10px 0;
  }
 
-
 .Auth_Wrap{
   left: 10px;
+}
+
+.User{
+  position: relative;
+  top: -20px;
+  padding: 0 10px 0 305px;
+}
+
+.User_Auth{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px ;
+}
+
+.User_Auth h3{
+  font-family: 'Heebo', sans-serif;
+  font-size: .9rem;
+  margin: 0 20px 0 0;
+}
+
+.User_Auth svg{
+  width: 30px;
+  cursor: pointer;
+}
+
+.Data_Wrapper > h3{
+  font-family: 'Heebo', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  margin: 30px 0 20px 0;
+}
+
+
+.Data_Grid_Info{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  background-color: #000000e5;
+}
+
+.Meta_Data{
+  padding: 5px 10px;
+}
+
+.Data_Grid_Info a{
+  font-family: 'Heebo', sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+
+.Data_Grid_Info a:hover{
+  text-decoration: underline;
+}
+
+.Data_Grid_Info img{
+  width: 100%;
+  border-radius: 3px;
+}
+
+.Flex, .S_Flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.S_Flex svg{
+  width: 20px;
+ margin-right: 5px;
+}
+
+.Ua_Bookmark{
+  color: #fab804;
+}
+
+.Uc_Comment{
+  color: #0105fd;
+}
+
+.Meta_Info  h3{
+  font-size: .8rem;
+  font-family: 'Heebo', sans-serif;
+}
+
+.Data_Grid_Social{
+  padding: 7px 0 2px 0;
+}
+
+.Socials h3  {
+ font-size: .8rem;
+ font-family: 'Heebo', sans-serif;
+}
+
+@media screen and (max-width:1000px){
+
+  nav{
+    width:100%;
+    height: auto;
+  }
+
+  .Logo{
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+  .Logo svg{
+    display: flex;
+    width: 35px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .Navigation{
+    width: 100%;
+    height: auto;
+    left: -1000px;
+    top: 0px;
+    background-color: #000000f3;
+    padding: 10px 15px;
+    transition: all .5s ease-in-out;
+  }
+
+  .Navigation.Activate{
+    left: 0;
+  }
+
+  .User{
+    padding: 70px 10px 0 15px;
+  }
+
+
+  
+}
+
+@media screen and (max-width:600px){
+  .Logo img{
+    width: 150px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .Logo svg{
+    width: 30px;
+  }
+
+  
 }

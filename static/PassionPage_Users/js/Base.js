@@ -22,4 +22,11 @@ function rotateToggle(parentElement) {
     let child1_svg = parentElement.querySelector('svg')
      child1_svg.classList.toggle('rotate-clockwise');
 }
-    
+
+
+let Navlist_Listener = document.querySelector('.Navlist_Listener')
+let Reveal_NavList = document.querySelector('.Reveal_NavList')
+
+Navlist_Listener.addEventListener('click', function(){
+    Reveal_NavList.classList.toggle('Activate')
+})
