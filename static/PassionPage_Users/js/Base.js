@@ -27,16 +27,40 @@ function rotateToggle(parentElement) {
 let Navlist_Listener = document.querySelector('.Navlist_Listener')
 let Reveal_NavList = document.querySelector('.Reveal_NavList')
 
+
+
     Navlist_Listener.addEventListener('click', function(){
         Reveal_NavList.classList.toggle('Activate')
-        User_Revealer.classList.remove('Activate')
     })
 
-    // Script to reveal and hide user authentication 
-let User_Activator = document.querySelector('.User_Activator')
-let User_Revealer =  document.querySelector('.User_Revealer')
+// Script to reveal and hide user authentication 
+document.addEventListener('DOMContentLoaded', function(){
+        let activator2 = document.querySelector('.User_Activator2')
+        let revealer2 =  document.querySelector('.User_Revealer2')
 
-    User_Activator.addEventListener('click', function(){
-        User_Revealer.classList.toggle('Activate')
-        Reveal_NavList.classList.remove('Activate')
-    })
+
+        activator2.addEventListener('click', function(){
+            revealer2.classList.toggle('Activate')
+                Reveal_NavList.classList.remove('Activate')
+            })
+})
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const passwordToggleButtons = document.querySelectorAll('.password-toggle-button');
+    passwordToggleButtons.forEach(function (button) {
+        const passwordField = button.previousElementSibling;
+        // Get the password field associated with the toggle button
+
+        button.addEventListener('click', function () {
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            button.innerHTML = '<i class="fa fa-eye-slash"></i>'
+        } else {
+            passwordField.type = 'password';
+            button.innerHTML = '<i class="fa fa-eye"></i>'
+        }
+        });
+    });  
+});
+

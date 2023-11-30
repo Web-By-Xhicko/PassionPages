@@ -117,3 +117,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'PassionPage_Users:Home_Page'
+LOGIN_URL = 'Login_Page'
+LOGOUT_URL = 'Logout_Page'

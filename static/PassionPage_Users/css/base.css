@@ -18,7 +18,6 @@ body::-webkit-scrollbar {
 
 .Wrapper{
   position: relative;
-  min-height: 100vh;
 }
 
 nav{
@@ -169,11 +168,15 @@ nav{
   align-items: center;
   padding: 10px ;
   position: fixed;
-  top: 0px;
+  top: 0;
   right: 0;
   z-index: 2;
   background-color: #fff;
   width: 100%;
+}
+
+.User_Auth2{
+  margin: 0 0 50px 0;
 }
 
 .User_Auth h3{
@@ -187,7 +190,8 @@ nav{
   cursor: pointer;
 }
 
-.User_Verified{
+.User_Verified,
+.User_Verified2{
   background-color: #000;
   padding: 0 10px;
   position: absolute;
@@ -204,15 +208,22 @@ nav{
   height: 40px;
 }
 
-.User_Verified ul{
+.User_Verified2.Activate{
+  height: 20px;
+}
+
+.User_Verified ul,
+.User_Verified2 ul{
   list-style: none;
 }
 
-.User_Verified ul li{
+.User_Verified ul li,
+.User_Verified2 ul li{
   text-align: center;
 }
 
-.User_Verified ul li a{
+.User_Verified ul li a,
+.User_Verified2 ul li a{
   text-decoration: none;
   font-family: 'Heebo', sans-serif;
   font-size: .85rem;
@@ -220,7 +231,8 @@ nav{
   text-transform: uppercase;
 }
 
-.User_Verified ul li a:hover{
+.User_Verified ul li a:hover,
+.User_Verified2 ul li a:hover{
  text-decoration: underline;
 }
 
@@ -236,11 +248,12 @@ nav{
   align-items: center;
   color: #000;
   font-family: 'Heebo', sans-serif;
-  margin: 80px 0 35px 0;
+  margin: 10px 0 35px 0;
 }
 
 .Welcome_Message h3{
-  font-size: 2rem;
+  font-size: 2.2rem;
+  text-align: center;
 }
 
 .Welcome_Message p{
@@ -254,7 +267,7 @@ nav{
 }
 
 .Inner_Message h3{
-  font-size: 1rem;
+  font-size: 1.4rem;
   text-align: center;
 }
 
@@ -282,9 +295,9 @@ nav{
 
 .Data_Wrapper > h3{
   font-family: 'Heebo', sans-serif;
-  font-size: 1rem;
+  font-size: 1.4rem;
   text-align: center;
-  margin: 30px 0 20px 0;
+  margin: 5px 0 20px 0;
 }
 
 .Data_Grid_Wrapper{
@@ -399,6 +412,226 @@ nav{
 }
 
 
+.Form_Wrapper{
+  width: 50%;
+  margin:  70px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000e5;
+}
+
+
+.Form_Wrapper h1{
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'Heebo', sans-serif;
+  color: #fff;
+  margin-top: 1em;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  border-radius: .2em;
+  padding: .7em 2em;
+}
+
+form input{
+  padding: 10px 15px ;
+  background: #fff ;
+  margin: .5em 0;
+  border: none;
+  border-radius: 2px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+}
+
+form input:focus{
+ outline:none;
+ background-color: #fff;
+}
+
+form.submitted input:invalid{
+border-color: #ee0707;
+}
+
+form small{
+display: block;
+font-family: 'Heebo', sans-serif;
+font-weight: 900;
+}
+
+::placeholder{
+  color: #000;
+}
+
+.pwd_flex{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.pwd_flex .Pwd{
+  width: 100%;
+}
+
+.pwd_flex .Show_Password{
+  width: 15%;
+  padding: .9em 0;;
+  position: absolute;
+  right: 1%;
+  background-color: transparent;
+  border: none;
+ 
+}
+
+.pwd_flex .Show_Password i{
+ font-size: 1.5rem;
+ color: #000;
+ cursor: pointer;
+}
+
+.btn{
+  margin: .7em 0;
+  padding:7px 15px ;
+  background-color: #fff;
+  color: #000;
+  margin: .5em 0;
+  border-radius: 2px ;
+  border: none;
+  font-family: 'Heebo', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.Form_bottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0 0 0;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-links p, 
+.form-links a{
+  color: #fff;
+  text-transform: capitalize;
+  font-family: 'Heebo', sans-serif;
+}
+
+.form-links  a:hover{
+ text-decoration: underline;
+}
+
+.Error_Wrapper{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background: #ee0707;
+      padding:.3em;
+      border-radius: .2em;
+      width:100%;
+      margin: .2em auto;
+    }
+  
+    .Error_Wrapper.remove{
+      display: none;
+    }
+  
+    .Error_Wrapper ul{
+      list-style: none;
+    }
+
+    .Error_Wrapper li{
+      font-family: 'Heebo', sans-serif;
+      color: #030303;
+      font-weight: 900;
+      font-size: .7rem;
+    }
+  
+    .Error_Wrapper i{
+      color: #030303;
+      font-size: .8rem;
+      cursor: pointer;
+    }
+
+.Password_Validation{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: .2em;
+  padding: .3em .5em;
+  transition: .5s ease-in-out;
+}
+
+.Password_Ban{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: .2em;
+  margin-bottom: .3em;
+}
+
+
+.Ban_Content,
+.Validation_Content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: .2em .5em;
+
+}
+
+.Validation_Content button{
+background-color: transparent;
+border: none;
+}
+
+.Validation_Content  i {
+  margin-right: 1em;
+  color: #ee0707;
+  font-size:1.1rem ;
+  transition: .5s ease-in-out;
+}
+
+.Validation_Content i .Marked{
+  color: #02fc24;
+}
+
+.Ban_Content i {
+  margin-right: 1em;
+  color: #ff5100;
+}
+
+.Ban_Content p{
+  font-family: 'Heebo', sans-serif;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.Validation_Content p{
+  font-family: 'Heebo', sans-serif;
+  text-transform: capitalize;
+  color: #fff;
+
+}
+
+
 
 @media screen and (max-width:1250px){
 
@@ -457,6 +690,11 @@ nav{
   .Data_Grid_Info{
     width: 98%;
   }
+
+  .Form_Wrapper{
+    width: 90%;
+    margin:  0 auto;
+  } 
   
 }
 
@@ -484,12 +722,29 @@ nav{
   }
 
   .Welcome_Message h3{
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+  }
+
+  .Inner_Message h3{
+    font-size: 1.2rem;
   }
 
   .wel_msg{
     width: 95%;
   }
 
-  
+  .Form_Wrapper{
+    width: 100%;
+    }
+}
+
+
+@media screen and (max-width:400px){
+  .Welcome_Message h3{
+    font-size: 1.3rem;
+  }
+
+  .Inner_Message h3{
+    font-size: 1rem;
+  }
 }

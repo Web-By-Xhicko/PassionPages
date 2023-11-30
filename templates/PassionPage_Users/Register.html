@@ -1,0 +1,55 @@
+{% include  'PassionPage_Users/Navigation.html' %}
+    {% load static %}
+    {% block content %}
+
+    <div class="User">
+
+        <div class="Form_Wrapper">
+            <h1>Join Us </h1>
+          
+            <form action="." method="POST" class="SubmitListener">
+        
+                {% for field in form %}
+                {% if field.errors %}
+                      <div class="Error_Wrapper Disappear">
+                        {{field.errors}}
+                        <i class="fa fa-close Close"></i>
+                      </div>
+                {% endif %}
+              {% endfor %}
+        
+        
+              {% csrf_token %}
+              {{form.username}}
+              {{form.email}}
+              <div class="pwd_flex">
+                {{form.password1}}
+                <button class="Show_Password password-toggle-button"  type="button"><i  class="fa fa fa-eye"></i></button>
+              </div>
+            
+              <div class="pwd_flex">
+                {{form.password2}}
+                <button class="Show_Password password-toggle-button"  type="button"><i  class="fa fa fa-eye"></i></button>
+              </div>
+            <button class="btn" type="submit">Register</button>
+                    
+          
+                   <div class="Form-bottom">
+        
+                      <div class="form-links flex">
+                        <p>Already have an account?</p> &nbsp;
+                        <a href="{% url 'PassionPage_Users:Login_Page' %}">Sign in</a>
+                      </div>
+                    
+                   </div>
+            </form>
+        
+           
+        
+          </div>
+       
+    </div>
+
+
+ 
+    {% endblock %}
