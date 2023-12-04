@@ -12,6 +12,12 @@ font-family: 'Josefin Sans', sans-serif;
 font-family: 'Josefin Slab', serif;
 */
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body covers at least the viewport height */
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -143,7 +149,7 @@ nav{
 }
 
 .Nav_Child.Activate{
-   max-height: 100px;
+   max-height: 200px;
    padding: 10px 0;
  }
 
@@ -156,11 +162,15 @@ nav{
   left: 10px;
 }
 
-.User{
+.User,
+.User_Base{
   position: relative;
   top: -20px;
   padding: 0 10px 0 305px;
+  flex-grow: 1;
 }
+
+
 
 .User_Auth{
   display: flex;
@@ -173,6 +183,14 @@ nav{
   z-index: 2;
   background-color: #fff;
   width: 100%;
+}
+
+.lord-icon{
+  position: relative;
+  left: -10px;
+  top: 20px;
+  z-index: 1;
+  background-color: #fff;
 }
 
 .User_Auth2{
@@ -238,7 +256,7 @@ nav{
 
 
 .Data_Wrapper{
-  margin: 80px auto;
+  margin: 85px auto;
 }
 
 .wel_msg{
@@ -300,6 +318,16 @@ nav{
   margin: 5px 0 20px 0;
 }
 
+.Updates{
+  margin: 50px 0 0 0;
+}
+
+.Updates h1{
+  text-align: center;
+  font-family: 'Heebo', sans-serif;
+  font-size: 1.4rem;
+}
+
 .Data_Grid_Wrapper{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -349,14 +377,6 @@ nav{
  margin-right: 5px;
 }
 
-.Ua_Bookmark{
-  color: #fab804;
-}
-
-.Ua_Love{
-  color: #fd0101;
-}
-
 .Ua_Comment{
   color: #0105fd;
 }
@@ -384,7 +404,7 @@ nav{
   justify-content: center;
   align-items: center;
   position: relative;
-
+  z-index: 2;
 }
 
 .Footer h2{
@@ -398,7 +418,29 @@ nav{
   color: #fff;
   font-size: 1rem;
   font-family: 'Heebo', sans-serif;
-  margin:10px 0;
+  margin:10px 0 0 0;
+}
+
+.Footer a{
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #fff;
+}
+
+.Footer a span {
+    font-weight: 800;
+    font-size: 16px;
+    transition: all .5s ease-in-out;
+}
+
+.Footer a span:hover {
+    text-decoration: underline;
+}
+
+.Footer a:hover{
+    text-decoration: underline;
 }
 
 .Footer_Socials a{
@@ -420,6 +462,7 @@ nav{
   justify-content: center;
   align-items: center;
   background-color: #000000e5;
+  position: relative;
 }
 
 
@@ -431,17 +474,81 @@ nav{
   margin-top: 1em;
 }
 
+
+.Password_Instruction{
+  position: absolute;
+  top: 45px;
+  left: 4px;
+  width: 98%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 1;
+  box-shadow: 2px 2px 5px #000000;
+  border-radius: 3px;
+  transition: display 0.3s;
+}
+
+
+
+.Password_Instruction > p{
+  font-family: 'Heebo', sans-serif;
+  font-size: 14px;
+  color: black;
+  text-transform: uppercase;
+  padding: 2px 0 0  0;
+}
+
+.Password_Wrap{
+  width: 100%;
+  padding:0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Password{
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  transition: color .5s ease-in-out;
+}
+
+.Password p{
+  font-family: 'Heebo', sans-serif;
+  font-size: 15px;
+  color:#000;
+  text-transform: capitalize;
+}
+
+.Password .bi-x{
+  width: 25px;
+  color: #ee0707;
+  display:flex;
+}
+
+
+.Password .bi-check {
+  width: 25px;
+  display: none;
+  color: #02fc24;
+}
+
+
 form{
   display: flex;
   flex-direction: column;
   max-width: 600px;
   width: 100%;
   border-radius: .2em;
-  padding: .7em 2em;
+  padding: 5px 10px;
 }
 
 form input{
-  padding: 10px 15px ;
+  padding: 9px 15px ;
   background: #fff ;
   margin: .5em 0;
   border: none;
@@ -631,6 +738,278 @@ border: none;
 
 }
 
+.Msg{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+text-transform: capitalize;
+transition: .5s ease-in-out;
+margin: 60px auto 10px auto;
+width: 500px;
+padding: 5px;
+border-radius: .2em;
+}
+
+.Msg2{
+margin: 10px auto 10px auto;
+}
+
+.Msg p{
+  font-family: 'Heebo', sans-serif;
+  color: #000;
+  font-size: .8rem;
+  text-transform: capitalize;
+}
+
+.SuccessMessages{
+background: #02fc2394;
+border: 2px solid  #02fc24;
+}
+
+.WarningMessages{
+background: #ffa600a4;
+border: 2px solid  #ffa600;
+}
+
+.ErrorMessages{
+background: #ee07079d;
+border: 2px solid  #ee0707;
+}
+
+
+.Main_Post_Wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 80px auto 0 auto;
+}
+
+.Main_Post_Details{
+  display: flex;
+  flex-direction: column;
+  padding:10px 5px;
+}
+
+.Main_Post_Details_Header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.Main_Post_Details_Header h1{
+  font-family: 'Heebo', sans-serif;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.Main_Post_Details_Header h1:nth-child(2){
+  font-family: 'Heebo', sans-serif;
+  font-size: 1rem;
+}
+
+.Main_Post_Details_Image{
+  border-radius: 3px 3px 0 0; 
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.Main_Post_Details_Content{
+  color: #000;
+}
+
+.Main_Post_Details_Content h1{
+  font-family: 'Heebo', sans-serif;
+  font-size:1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.Main_Post_Details_Content p{
+  font-family: 'Heebo', sans-serif;
+    text-align: justify;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.Main_Post_Details_Meta_Info{
+  display: flex;
+  flex-direction: column;
+  margin:  1em 0;
+  padding: .3em ;
+  border-radius: .2em;
+  z-index: 1;
+}
+
+.hr{
+ color: #000;
+}
+
+.Reactions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .2em 0;
+    position: relative;
+    color: #000;  
+    z-index: 0;
+ }
+
+.Reactions a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    font-family: 'Heebo', sans-serif;
+    padding:0 7px ;
+    border-radius: 2px;
+    z-index: 0;
+ }
+
+.Reactions a:hover{
+    text-decoration: underline;
+ }
+
+.Comment_Reaction{
+  display: flex;
+  z-index: 0;
+}
+
+.Comment_Reaction svg{
+  width: 22px;
+  margin-right: 5px;
+  color:#0105fd;
+  z-index: 0;
+}
+
+.Comment_Reaction p{
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Heebo', sans-serif;
+}
+
+.Comment_Box{
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  background-color: #000;
+}
+
+.Comment_Box h1{
+  margin-top: 10px 0;
+  font-family: 'Heebo', sans-serif;
+  font-size:1rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.Comment_Box form{
+  max-width: 100%;
+}
+
+
+.Comment_Box textarea{
+  resize: none;
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-family: 'Heebo', sans-serif;
+}
+
+.Comment_Box textarea:focus{
+  outline: none;
+} 
+
+.Comment_Box textarea::placeholder{
+  color: #000;
+  font-family: 'Heebo', sans-serif;
+  font-size:1rem; 
+} 
+
+
+.Comment_Box button{
+  width: 100%;
+  padding: 8px 15px;
+  font-size:1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: 'Heebo', sans-serif;
+  border: none;
+  border-radius: 3px ;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+
+.Comment_Posted{
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  width: 100%;
+  margin: 2em 0;
+  background-color: #000;
+  border-radius: 3px;
+}
+
+.Comment_Posted h1{
+  text-align: center;
+  font-family: 'Heebo', sans-serif;
+  font-size:1.2rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 10px 0 5px 0;
+}
+
+.Comment_Wrapper{
+  margin: 0 0 2em 0;
+  padding: .4em .3em;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+
+.Comment_Posted_Info {
+  margin: .2em 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Comment_Posted_Info h3{
+  margin-bottom: .4em;
+  font-family: 'Heebo', sans-serif;
+  font-size: 1rem;
+  color: #000;
+}
+
+.Comment_Wrapper p {
+  color: #000;
+  border-radius: .2em;
+  font-family: 'Heebo', sans-serif;
+  text-align: justify;
+
+ }
+ 
+.No_Comment_Available{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.No_Comment_Available p{
+  color: #000;
+  text-transform: uppercase;
+  font-family: 'Heebo', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 2em 0;
+}
 
 
 @media screen and (max-width:1250px){
@@ -670,6 +1049,10 @@ border: none;
     padding: 70px 10px 0 15px;
   }
 
+  .User_Base{
+    padding: 0 10px 0 15px;
+  }
+
   .Footer{
     padding: 5px 10px 0 15px;
   }
@@ -687,6 +1070,10 @@ border: none;
     width: 95%;
   }
 
+  .Updates{
+    margin: 5px 0 0 0;
+  }
+  
   .Data_Grid_Info{
     width: 98%;
   }
@@ -695,7 +1082,15 @@ border: none;
     width: 90%;
     margin:  0 auto;
   } 
-  
+
+  .Msg{
+    margin: 5px auto 10px auto;
+    }
+
+    .Main_Post_Wrapper{
+      width: 100%;
+      margin: 5px 0;
+    }
 }
 
 @media screen and (max-width:950px){
@@ -703,6 +1098,14 @@ border: none;
   .Data_Grid_Wrapper{
     grid-template-columns: repeat(2, 1fr);
   }
+
+}
+
+@media screen and (max-width:700px){
+  .Msg{
+    width: 90%;
+    margin: 5px auto 10px auto;
+    }
 
 }
 
@@ -736,8 +1139,47 @@ border: none;
   .Form_Wrapper{
     width: 100%;
     }
+
+    .Password_Instruction{
+      top: 3px;
+      left: 3px;
+  }
+  
+  .Password_Wrap{
+     flex-direction: column;
+  }
+
+  .Password{
+    width: 100%;
+    margin: 0 0 -3px 0;
 }
 
+.Msg{
+  width: 100%;
+  margin: 5px auto 10px auto;
+  }
+
+}
+
+
+@media screen and (max-width:650px){
+  .Main_Post_Details_Content h1{
+    font-size:.9rem;
+  }
+
+  .Main_Post_Details_Content p{
+    font-size: .8rem;
+}
+
+  .Comment_Wrapper p{
+    font-size: .9rem;
+  }
+
+  .Comment_Posted_Info h1{
+    font-size: .8rem;
+  }
+
+}
 
 @media screen and (max-width:400px){
   .Welcome_Message h3{
@@ -747,4 +1189,19 @@ border: none;
   .Inner_Message h3{
     font-size: 1rem;
   }
+
+
+  .Main_Post_Details_Header,
+  .Comment_Posted_Info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+  }
+
+  .Main_Post_Details_Content h1{
+    font-size:.8rem;
+  }
+
+
 }

@@ -1,8 +1,10 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth.models import User
+from .models import Comment
 from django.core.exceptions import ValidationError
 from django.contrib.auth.hashers import make_password
+
 
 
 class UserRegistrationForm(UserCreationForm):
@@ -21,7 +23,7 @@ class UserRegistrationForm(UserCreationForm):
    )
 
    password1 = forms.CharField(
-      widget = forms.PasswordInput(attrs = {'onkeyup':'checkPassword(this.value)', 'placeholder': 'Enter Password', 'class':'Pwd'}),
+      widget = forms.PasswordInput(attrs = {'placeholder': 'Enter Password', 'class':'Pwd password'}),
       max_length = 50,
       required = True,
       label = 'Passowrd',
@@ -76,10 +78,17 @@ class UserLoginForm(AuthenticationForm):
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'})
     )
     password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'class': 'form-control Pwd ', 'placeholder': 'Password'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control Pwd password', 'placeholder': 'Password'})
     )
 
     error_messages = {
         'invalid_login': 'Please enter a correct %(username)s and password. Note that both fields may be case-sensitive.',
         'inactive': 'This account is inactive.',
     }
+
+class NewCommentForm(forms.ModelForm):
+    Comment = forms.CharField(widget=forms.Textarea(attrs={'rows':8, 'cols':10 ,'placeholder':'What do you Think ?'}))
+
+    class Meta:
+        model = Comment
+        fields = ['Comment']

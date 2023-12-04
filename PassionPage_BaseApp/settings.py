@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-%t&h-ygkffog4v!lp-3eyv++*w9z#(2!h#@0wn8q#v2ommn+-d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '172.20.10.4', '192.168.137.1', '192.168.0.100', '192.168.0.101']
 
 
 # Application definition
@@ -54,6 +54,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'PassionPage_Users.context_processor.Category_List_Options',
+
             ],
         },
     },
@@ -113,11 +115,15 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  
 ]
 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+MEDIA_URL = '/media/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'PassionPage_Users:Home_Page'
-LOGIN_URL = 'Login_Page'
-LOGOUT_URL = 'Logout_Page'
+LOGIN_URL = 'PassionPage_Users:Login_Page'
+LOGOUT_URL = 'PassionPage_Users:Logout_Page'

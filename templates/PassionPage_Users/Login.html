@@ -4,7 +4,96 @@
 
     <div class="User">
 
-       
+        {% if messages %}
+                {% for message in messages %}
+                        {% if message.tags == 'success' %} 
+                            <div class="SuccessMessages  Msg">
+                                <p>{{ message }}</p>
+                            </div> 
+                         {% endif %}
+                {% endfor %}
+        {% endif %} 
+
+        {% if messages %}
+                {% for message in messages %}
+                        {% if message.tags == 'warning' %} 
+                            <div class="WarningMessages  Msg">
+                                <p>{{ message }}</p>
+                            </div> 
+                         {% endif %}
+                {% endfor %}
+        {% endif %} 
+
+        {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+                <div class="ErrorMessages Msg ">
+                    <p>{{ message }}</p>
+                </div> 
+            {% endif %}
+        {% endfor %}
+     {% endif %}
+    
+
+        <div class="Form_Wrapper">
+
+            <h1>Login </h1>
+            <form action="." method="POST" class="SubmitListener">  
+
+              {% csrf_token %}
+              {{form.username}}
+              {{form.email}}
+              <div class="pwd_flex Focus">
+                {{form.password}}
+                <button class="Show_Password password-toggle-button"  type="button"><i  class="fa fa fa-eye"></i></button>
+              </div>
+            
+
+            <button class="btn" type="submit">Explore</button>
+                    
+          
+                   <div class="Form-bottom">
+        
+                      <div class="form-links flex">
+                        <p>Don't  have an account?</p> &nbsp;
+                        <a href="{% url 'PassionPage_Users:Register_Page' %}">Register</a>
+                      </div>
+                    
+                   </div>
+            </form>
+        
+           
+        
+          </div>
     </div>
  
+
+    
+    <script>
+        // Logic to remove Errors
+          let Close = document.querySelectorAll('.Close')
+          let disappear = document.querySelectorAll('.Disappear')
+  
+          Close.forEach((closeBtn, index) => {
+                  closeBtn.addEventListener('click', () => {
+                  disappear[index].classList.toggle('remove');
+              })
+          })
+
+
+          // Script to reveal and hide user authentication 
+    document.addEventListener('DOMContentLoaded', function(){
+        let activator2 = document.querySelector('.User_Activator2')
+        let revealer2 =  document.querySelector('.User_Revealer2')
+
+        activator2.addEventListener('click', function(){
+            revealer2.classList.toggle('Activate')
+                Reveal_NavList.classList.remove('Activate')
+            })
+
+})
+
+      </script>
+
     {% endblock %}
+{% include  'PassionPage_Users/Footer.html' %}

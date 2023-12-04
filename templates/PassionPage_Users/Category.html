@@ -3,9 +3,7 @@
     {% block content %}
 
     <div class="User" id="Authenticated">
-
         <div class="User_Auth">
-
             <h3>Welcome back, {{user.username}}</h3>
             <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-fill User_Activator2" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
@@ -22,39 +20,28 @@
             
         </div>
 
-
-        {% if messages %}
-            {% for message in messages %}
-                    {% if message.tags == 'success' %} 
-                        <div class="SuccessMessages  Msg">
-                            <p>{{ message }}</p>
-                        </div> 
-                    {% endif %}
-            {% endfor %}
-        {% endif %} 
-
     
-    
-{% if Updated_Post %}
-    <div class="Updates">
-        <h1>Latest Post</h1>
-    </div> 
+        {% if Category_Posts %}
+        <div class="Updates">
+            <h1>{{ Category }} Related Posts</h1>
+        </div> 
+        {% endif %}
 
         <div class="Data_Grid_Wrapper">
-        {% for Blog_Post in Updated_Post %}
+        {% for Categories_Post in Category_Posts %}
             <div class="Data_Grid_Info">
-            <img src="{{Blog_Post.Image.url}}" alt="{{Blog_Post.Category_Tag}}">
+            <img src="{{Categories_Post.Image.url}}" alt="{{Categories_Post.Category_Tag}}">
 
                 <div class="Meta_Data">
                     
-                <a href="{{Blog_Post.get_absolute_url}}">{{ Blog_Post.Title|truncatechars:38}}</a>
+                <a href="{{Categories_Post.get_absolute_url}}">{{ Categories_Post.Title|truncatechars:42}}</a>
 
                 <div class="Data_Grid_Meta_Info Flex">
                     <div class="Meta_Info">
-                        <h3>By {{Blog_Post.Last_Name}}</h3>
+                        <h3>By {{Categories_Post.Last_Name}}</h3>
                     </div>
                     <div class="Meta_Info">
-                        <h3>{{Blog_Post.Category_Tag}}</h3>
+                        <h3>{{Categories_Post.Category_Tag}}</h3>
                     </div>
                 </div>
 
@@ -63,15 +50,13 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat-left-fill Ua_Comment" viewBox="0 0 16 16">
                             <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
                           </svg>
-                        <h3>{{Blog_Post.num_comments}}</h3>
+                        <h3>{{Categories_Post.num_comments}}</h3>
                     </div>
                 </div>
                 </div>
             </div>
         {% endfor %}
         </div>
-
-{% endif %}
 
 
 

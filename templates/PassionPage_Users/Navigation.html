@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="{% static 'PassionPage_Users/css/Base.css' %}">
     <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-   
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
 
 <body>
@@ -59,10 +58,13 @@
                         <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
                             <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                           </svg>
+                          
                         <ul class="Nav_Child Child_Links">
-                            <li><a href="#">Politics</a></li>
-                            <li><a href="#">Politics</a></li>
+                        {% for Category_List_Item in Category_List_Options %}
+                            <li><a href="/Category/{{Category_List_Item.name}}">{{Category_List_Item.name}}</a></li>
+                        {% endfor %}
                         </ul>
+
                     </li>
     
                     <li>
@@ -87,10 +89,7 @@
                             <li><a href="#">Edit Profile</a></li>
                             <li><a href="#">Change Password</a></li>
                             <li><a href="#">Delete Account</a></li>
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Edit Profile</a></li>
-                            <li><a href="#">Change Password</a></li>
-                            <li><a href="#">Delete Account</a></li>
+                            
                         </ul>
                     </li>
                 

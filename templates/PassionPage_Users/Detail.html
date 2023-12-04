@@ -1,0 +1,118 @@
+{% include  'PassionPage_Users/Navigation.html' %}
+    {% load static %}
+    {% block content %}
+
+    <div class="User" id="Authenticated">
+        <div class="User_Auth">
+
+        <lord-icon
+            src="https://cdn.lordicon.com/ezsjqygj.json"
+            trigger="loop"
+            delay="1000"
+            colors="primary:#000000,secondary:#000000"
+            style="width:50px;height:40px">
+        </lord-icon>
+
+            <h3>Welcome back, {{user.username}}</h3>
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-person-fill User_Activator2" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+              </svg>
+
+            <div class="User_Verified2  User_Revealer2">
+                <ul>
+                {% if user.is_authenticated %} 
+                    <li><a href="{% url 'PassionPage_Users:Logout_Page' %}">Logout</a></li>
+                {% endif %}
+                </ul>
+            </div>
+
+            
+        </div>
+
+        {% if messages %}
+        {% for message in messages %}
+                {% if message.tags == 'success' %} 
+                    <div class="SuccessMessages  Msg">
+                        <p>{{ message }}</p>
+                    </div> 
+                {% endif %}
+        {% endfor %}
+    {% endif %} 
+
+            <div class="Main_Post_Wrapper">
+                <div class="Main_Post_Details">
+                    <div class="Main_Post_Details_Header">
+                        <h1>{{object.First_Name}} {{object.Last_Name}}</h1>
+                        <h1>{{object.Publish}}</h1>
+                    </div>
+            
+                    <img  class="Main_Post_Details_Image" src="{{object.Image.url}}" alt="{{object.Category_Tag}}">
+            
+                    <div class="Main_Post_Details_Content">
+                        <h1>{{object.Title}}</h1>
+                        <p>{{object.Content}}</p>
+                    </div>
+            
+                    <div class="Main_Post_Details_Meta_Info">
+                        <hr class="hr">
+
+                        <div class="Reactions">
+                            
+                            <div class="Comment_Reaction">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat-left-fill Ua_Comment" viewBox="0 0 16 16">
+                                    <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                  </svg>
+                                {% with Comment.count as total_comments %}
+                                    <p>{{total_comments}} Comment</p>
+                                {% endwith %}
+                            </div>
+                    
+                            <a href="{% url 'PassionPage_Users:Home_Page' %}">Back</a>
+                    
+                        </div>  
+                    </div>
+    
+                </div>
+
+                <div class="Comment_Box">      
+                    <h1>Make a new comment</h1>
+
+                    <form action="#" method="post"> 
+                        {% csrf_token %}
+                        {{comment_form.Comment}}
+                        <button class="btn" type="submit">submit</button>
+                    </form>
+                       
+                </div>
+
+                {% if Comment %}
+                <div class="Comment_Posted">
+                    <h1>Latest Comments</h1>
+                    {% for UserComment in Comment %}
+                            <div class="Comment_Wrapper">     
+                                <div class="Comment_Posted_Info">
+                                    <h3>{{UserComment.Name}}</h3>
+                                    <h3>{{UserComment.Publish}}</h3>
+                            </div>
+                            <p>{{UserComment.Comment|truncatechars:270}}</p>
+                            </div>
+                       
+                    {% endfor %}
+                </div>
+                {% else %}
+                    <div class="No_Comment_Available">
+                        <p>No comments available</p>
+                    </div>
+                {% endif %}
+            </div>
+
+
+
+    </div>
+
+
+    
+ 
+
+    {% endblock %}
+    {% include  'PassionPage_Users/Footer.html' %}

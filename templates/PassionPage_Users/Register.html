@@ -2,10 +2,97 @@
     {% load static %}
     {% block content %}
 
-    <div class="User">
+    <div class="User" id="RegisterAuth">
 
         <div class="Form_Wrapper">
             <h1>Join Us </h1>
+
+            
+            <div class="Password_Instruction ">
+      
+                <!-- <img src="Logo_2.png" alt=""> -->
+                <p>PassionPage password requirement</p>
+    
+                    <div class="Password_Wrap">
+    
+                        <div class="Password">
+                          <p> 8 Characters long</p>
+    
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x cancel Eight_Character " viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+
+                          <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-check check Eight_Character2 " viewBox="0 0 16 16">
+                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                          </svg>
+                        </div>
+    
+                        <div class="Password">
+                          <p>1 uppercase Character</p>
+    
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x Uppercase_Character" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+
+                          <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-check Uppercase_Character2" viewBox="0 0 16 16">
+                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                          </svg>
+                        </div>
+    
+                    </div>
+                    
+                    <div class="Password_Wrap">
+                      <div class="Password">
+                        <p>1 Special Character</p>
+    
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x Special_Character" viewBox="0 0 16 16">
+                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-check Special_Character2" viewBox="0 0 16 16">
+                          <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                      </div>
+    
+                      <div class="Password">
+                        <p>1 Lowercase Character</p>
+    
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x Lowercase_Character" viewBox="0 0 16 16">
+                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-check Lowercase_Character2" viewBox="0 0 16 16">
+                          <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                      </div>
+                    </div>
+    
+                    <div class="Password_Wrap">
+                      <div class="Password">
+                        <p>1 Number Character</p>
+    
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x Number_Character" viewBox="0 0 16 16">
+                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-check Number_Character2" viewBox="0 0 16 16">
+                          <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                      </div>
+    
+                      <div class="Password">
+                        <p>Not entirely numberic</p>
+    
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x Entirely_Not_Numeric" viewBox="0 0 16 16">
+                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-check Entirely_Not_Numeric2" viewBox="0 0 16 16">
+                          <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                      </div>
+                    </div>
+              </div>
           
             <form action="." method="POST" class="SubmitListener">
         
@@ -18,11 +105,12 @@
                 {% endif %}
               {% endfor %}
         
+              
         
               {% csrf_token %}
               {{form.username}}
               {{form.email}}
-              <div class="pwd_flex">
+              <div class="pwd_flex Focus">
                 {{form.password1}}
                 <button class="Show_Password password-toggle-button"  type="button"><i  class="fa fa fa-eye"></i></button>
               </div>
@@ -51,5 +139,31 @@
     </div>
 
 
+    <script>
+      // Logic to remove Errors
+        let Close = document.querySelectorAll('.Close')
+        let disappear = document.querySelectorAll('.Disappear')
+
+        Close.forEach((closeBtn, index) => {
+                closeBtn.addEventListener('click', () => {
+                disappear[index].classList.toggle('remove');
+            })
+        })
+
+        // Script to reveal and hide user authentication 
+document.addEventListener('DOMContentLoaded', function(){
+        let activator2 = document.querySelector('.User_Activator2')
+        let revealer2 =  document.querySelector('.User_Revealer2')
+
+        activator2.addEventListener('click', function(){
+            revealer2.classList.toggle('Activate')
+                Reveal_NavList.classList.remove('Activate')
+            })
+
+})
+
+    </script>
  
     {% endblock %}
+
+{% include  'PassionPage_Users/Footer.html' %}
