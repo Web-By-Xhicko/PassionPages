@@ -94,6 +94,8 @@ Manual data entry initially, with potential automation using Django's management
 - Relying on local servers for testing
 - Unit and Integration Testing
 
+Deployed Application: [Link to Deployed App](http://xhicko2.pythonanywhere.com/)
+
 ## Existing Solutions
 
 ### WordPress, Blogger, Medium, Ghost, Wix, Squarespace
